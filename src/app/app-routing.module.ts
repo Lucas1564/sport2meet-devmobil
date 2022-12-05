@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./layout/layout.module').then( m => m.LayoutPageModule)
+    loadChildren: () => import('./layout/layout.module').then(m => m.LayoutPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule)
   }
+
 ];
 @NgModule({
   imports: [
@@ -13,4 +19,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

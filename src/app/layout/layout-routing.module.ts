@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../auth/auth.guard';
 
 import { LayoutPage } from './layout.page';
 
@@ -28,6 +29,7 @@ const routes: Routes = [
       {
 
         path: "user-profile",
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('./user-profile/user-profile.module').then(
             (m) => m.UserProfilePageModule
@@ -48,4 +50,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LayoutPageRoutingModule {}
+export class LayoutPageRoutingModule { }
