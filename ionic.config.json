@@ -1,0 +1,7 @@
+{
+  "name": "sport2meet-devmobil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
