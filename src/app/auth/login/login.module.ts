@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { MainButtonModule } from 'src/app/main-button/main-button.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MainButtonModule } from 'src/app/main-button/main-button.module';
     FormsModule,
     IonicModule,
     MainButtonModule,
+    FontAwesomeModule,
     LoginPageRoutingModule
   ],
   declarations: [LoginPage]

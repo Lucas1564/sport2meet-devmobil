@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
+import { faHand } from "@fortawesome/free-solid-svg-icons";
 
 import { AuthService } from "../auth.service";
 import { AuthRequest } from "../../models/auth-request";
@@ -12,6 +13,7 @@ import { AuthRequest } from "../../models/auth-request";
   templateUrl: "login.page.html",
 })
 export class LoginPage {
+  faHand = faHand;
   /**
    * This authentication request object will be updated when the user
    * edits the login form. It will then be sent to the API.

@@ -5,6 +5,8 @@
 </ion-header>
 
 <ion-content>
+  <h1>Hi ! Welcome Back ! <fa-icon [icon]="faHand" style="color:#E7D8C9"> </fa-icon></h1>
+  <p class="soustitre">Hello again, you’ve been missed!</p>
   <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
     <ion-list>
       <!-- Username input -->
@@ -16,6 +18,7 @@
           required="true"
           name="email"
           [(ngModel)]="authRequest.email"
+          placeholder="john.doe@heig-vd.ch"
         ></ion-input>
       </ion-item>
   
@@ -34,12 +37,16 @@
           type="password"
           name="password"
           [(ngModel)]="authRequest.password"
+          placeholder="Please enter your password"
         ></ion-input>
       </ion-item>
   
       <!-- Error message displayed if the password is invalid -->
       <ion-item lines="none" *ngIf="password.invalid && password.touched">
         <ion-text color="danger">Password is required.</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox></ion-checkbox><ion-label>Remember me</ion-label>
       </ion-item>
     </ion-list>
   
@@ -53,6 +60,9 @@
       <ion-text color="danger" *ngIf="loginError"
         >Email or password is invalid.</ion-text
       >
+    </div>
+    <div class="piedDePage">
+      <p class="soustitre">Don't you have an account ? <ion-router-link routerLink="/signup">Sign up</ion-router-link></p>
     </div>
   </form>
 </ion-content>
