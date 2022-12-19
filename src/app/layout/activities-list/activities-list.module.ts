@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ActivitiesListPageRoutingModule } from './activities-list-routing.module';
 
 import { ActivitiesListPage } from './activities-list.page';
+import { MainButtonModule } from 'src/app/main-button/main-button.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    MainButtonModule,
     ActivitiesListPageRoutingModule
   ],
   declarations: [ActivitiesListPage]
