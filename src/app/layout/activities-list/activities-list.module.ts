@@ -5,9 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ActivitiesListPageRoutingModule } from './activities-list-routing.module';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { ActivitiesListPage } from './activities-list.page';
 import { MainButtonModule } from 'src/app/main-button/main-button.module';
+import { CardActivityModule } from 'src/app/card-activity/card-activity.module';
+import { ButtonAddActivityModule } from 'src/app/button-add-activity/button-add-activity.module';
 
 @NgModule({
   imports: [
@@ -15,7 +18,10 @@ import { MainButtonModule } from 'src/app/main-button/main-button.module';
     FormsModule,
     IonicModule,
     MainButtonModule,
-    ActivitiesListPageRoutingModule
+    ActivitiesListPageRoutingModule,
+    CardActivityModule,
+    FontAwesomeModule,
+    ButtonAddActivityModule
   ],
   declarations: [ActivitiesListPage]
 })
