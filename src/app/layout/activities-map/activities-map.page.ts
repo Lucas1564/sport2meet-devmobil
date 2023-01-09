@@ -47,12 +47,12 @@ export class ActivitiesMapPage implements OnInit {
       iconUrl: 'assets/location/location.gif',
       iconSize: [120, 90],
       iconAnchor: [50, 40],
-      popupAnchor: [10, 0]
+      tooltipAnchor: [10, 0],
     });
 
     //add marker
     const markPoint = Leaflet.marker([lat, long], { icon: myPosition });
-    markPoint.bindPopup('<p>Votre localisation</p>');
+    markPoint.bindTooltip('Vous êtes ici', { permanent: false, direction: 'top' });
     this.map.addLayer(markPoint);
   }
 
