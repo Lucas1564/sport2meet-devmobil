@@ -4,7 +4,7 @@ import { ReplaySubject, Observable, from } from "rxjs";
 import { map, delayWhen } from "rxjs/operators";
 import { Storage } from "@ionic/storage";
 import jwt_decode from 'jwt-decode';
-import { environment } from "../../environments/environment.sample";
+import { environment } from "../../environments/environment";
 
 import { AuthResponse } from "../models/auth-response";
 import { AuthRequest } from "../models/auth-request";
