@@ -1,6 +1,6 @@
 export type Activity = {
-    title: string;
+    sport: string;
     description: string;
-    lieu: string;
-    date: string;
+    locality: string;
+    datetime: string;
 }

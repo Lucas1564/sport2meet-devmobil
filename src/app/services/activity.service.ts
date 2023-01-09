@@ -11,6 +11,6 @@ export class ActivityService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Activity[]> {
-    return this.http.get<Activity[]>('url de la requête');
+    return this.http.get<Activity[]>('https://sport-2-meet.onrender.com/activities');
   }
 }

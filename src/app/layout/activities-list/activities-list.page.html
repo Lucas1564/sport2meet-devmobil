@@ -6,8 +6,6 @@
 </ion-header>
 
 <ion-content>
-  <!--ngFor-->
-  <app-card-activity></app-card-activity>
-  <app-card-activity></app-card-activity>
+  <app-card-activity *ngFor="let activity of activities" [activity]="activity"></app-card-activity>
   <app-button-add-activity></app-button-add-activity>
 </ion-content>

@@ -1,12 +1,12 @@
 <ion-card *ngIf="activity">
   <ion-card-header>
-    <ion-card-title>{{activity.title}}</ion-card-title>
+    <ion-card-title>{{activity.sport}}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <span>{{activity.description}}</span>
     <div class="containerLieuDate">
-      <span><fa-icon [icon]="faLocationDot" style="color:#FF6720"> </fa-icon>{{activity.lieu}}</span>
-      <span><fa-icon [icon]="faCalendar" style="color:#FF6720"> </fa-icon>{{activity.date}}</span>
+      <span><fa-icon [icon]="faLocationDot" style="color:#FF6720"> </fa-icon>{{activity.locality}}</span>
+      <span><fa-icon [icon]="faCalendar" style="color:#FF6720"> </fa-icon>{{activity.datetime | date:'short'}}</span>
     </div>
   </ion-card-content>
 </ion-card>
