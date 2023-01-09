@@ -47,6 +47,8 @@ export class AuthService {
   logOut(): void {
     this.#auth$.next(undefined);
     this.storage.remove('token');
+    this.storage.remove('expireDate');
+    this.storage.remove('userId');
     console.log("User logged out");
   }
 
