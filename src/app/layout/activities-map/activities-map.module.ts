@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ActivitiesMapPageRoutingModule } from './activities-map-routing.module';
+import { MapModule } from 'src/app/map/map.module';
 
 import { ActivitiesMapPage } from './activities-map.page';
 
@@ -13,8 +14,9 @@ import { ActivitiesMapPage } from './activities-map.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    MapModule,
     ActivitiesMapPageRoutingModule
   ],
   declarations: [ActivitiesMapPage]
 })
-export class ActivitiesMapPageModule {}
+export class ActivitiesMapPageModule { }
