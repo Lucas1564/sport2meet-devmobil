@@ -1,6 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as Leaflet from 'leaflet';
 import { Geolocation } from '@capacitor/geolocation';
+import { Activity } from 'src/app/models/activity';
+import { ActivityService } from 'src/app/services/activity.service';
 
 @Component({
   selector: 'app-map',
@@ -9,13 +11,15 @@ import { Geolocation } from '@capacitor/geolocation';
 })
 export class MapComponent implements AfterViewInit {
 
-  constructor() { }
+  constructor(private activityService: ActivityService) { }
 
   ngAfterViewInit(): void {
     this.leafletMap();
   }
 
   map!: Leaflet.Map;
+  watchId: any;
+  activities?: Activity[];
 
   ionViewDidEnter() {
     this.leafletMap();
@@ -23,12 +27,10 @@ export class MapComponent implements AfterViewInit {
 
   async leafletMap() {
 
-    var lat = 12.972442;
-    var long = 77.594563;
+    var lat = 0;
+    var long = 0;
     //Get current location
     await Geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp.coords.latitude);
-      console.log(resp.coords.longitude);
       lat = resp.coords.latitude;
       long = resp.coords.longitude;
     }).catch((error) => {
@@ -54,7 +56,39 @@ export class MapComponent implements AfterViewInit {
     const markPoint = Leaflet.marker([lat, long], { icon: myPosition });
     markPoint.bindTooltip('Vous êtes ici', { permanent: false, direction: 'top' });
     this.map.addLayer(markPoint);
+
+    await Geolocation.watchPosition({}, (position, err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      //change marker position
+      if (position != null) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+      }
+      markPoint.setLatLng([lat, long]);
+    });
+
+    this.activityService.getAll().subscribe(activities => {
+      this.activities = activities;
+      this.activities.forEach(activity => {
+        const activityMarker = Leaflet.icon({
+          iconUrl: 'https://png.pngtree.com/png-vector/20220706/ourmid/pngtree-vector-location-icon-free-and-png-png-image_5708678.png',
+          iconSize: [41, 41],
+          iconAnchor: [0, 0],
+          popupAnchor: [22, 0],
+        });
+        console.log(activity.location.coordinates);
+        const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker });
+        var date = new Date(activity.datetime);
+        marker.bindPopup("<b>" + activity.sport + "</b><br>" + activity.description + "<br>" + activity.address + "<br>" + date.toLocaleString());
+        this.map.addLayer(marker);
+      });
+    });
+
   }
+
 
   ionViewWillLeave() {
     this.map.remove();
