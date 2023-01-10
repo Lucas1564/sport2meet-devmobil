@@ -64,8 +64,13 @@ export class MapComponent implements AfterViewInit {
       }
       //change marker position
       if (position != null) {
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
+        if (position.coords.latitude != null && position.coords.longitude != null) {
+          lat = position.coords.latitude;
+          long = position.coords.longitude;
+        } else {
+          lat = 0;
+          long = 0;
+        }
       }
       markPoint.setLatLng([lat, long]);
     });
@@ -76,10 +81,9 @@ export class MapComponent implements AfterViewInit {
         const activityMarker = Leaflet.icon({
           iconUrl: 'https://png.pngtree.com/png-vector/20220706/ourmid/pngtree-vector-location-icon-free-and-png-png-image_5708678.png',
           iconSize: [41, 41],
-          iconAnchor: [0, 0],
-          popupAnchor: [22, 0],
+          iconAnchor: [20, 20],
+          popupAnchor: [0, 0],
         });
-        console.log(activity.location.coordinates);
         const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker });
         var date = new Date(activity.datetime);
         marker.bindPopup("<b>" + activity.sport + "</b><br>" + activity.description + "<br>" + activity.address + "<br>" + date.toLocaleString());
