@@ -19,6 +19,7 @@ La page d'accueil permet de voir les activités sur une carte grâce à leur gé
 L'utilisateur peut filtrer les activités qu'il veut voir sur la carte,  par ville, sport, XXXX en appuyant sur le bouton "filtre".<br>
 Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
+![image provisoire](/resources/photoprovisoire.png)
 
 ### 2. Page des activités
 
@@ -49,6 +50,7 @@ La page de base se constitue des informations générales sur l'activité :
 - Les participants et le nombre de place restante
 - Le type (tournoi, évènement, entraînement, autre)
 - Les potentielles images déjà mises
+
 Ainsi que les boutons pour s'inscrire à l'activité.<br>
 Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
@@ -75,6 +77,7 @@ Lorsqu'un utilisateur va sur le profil d'une autre personne il peut voir :
 - Son nom
 - Les activités qu'il a créées
 - Ses statistiques
+
 Lorsqu'un utilisateur va sur son profil il peut voir :
 - Sa photo de profil
 - Son nom
