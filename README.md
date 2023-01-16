@@ -15,15 +15,15 @@ Dans les rubriques suivantes, nous allons détailler les fonctionnalités de bas
 
 ### 1. Page d'accueil
 
-La page d'accueil permet de voir les activités sur une carte grâce à leur géolocalisation. La carte se charge directement grâce à la position de l'utilisateur, ce qui permet de voir toute suite les activités qui se trouvent à proximité. Les activités auxquelles l'utilisateur est déjà inscrit s'affiche d'une couleur verte alors que les autres sont en orange.
-L'utilisateur peut filtrer les activités qu'il veut voir sur la carte,  par ville, sport, XXXX en appuyant sur le bouton "filtre".
-Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).
+La page d'accueil permet de voir les activités sur une carte grâce à leur géolocalisation. La carte se charge directement grâce à la position de l'utilisateur, ce qui permet de voir toute suite les activités qui se trouvent à proximité. Les activités auxquelles l'utilisateur est déjà inscrit s'affiche d'une couleur verte alors que les autres sont en orange. <br>
+L'utilisateur peut filtrer les activités qu'il veut voir sur la carte,  par ville, sport, XXXX en appuyant sur le bouton "filtre".<br>
+Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
 
 ### 2. Page des activités
 
-La page des activités permet de voir les activités sous forme de liste. Comme pour la page précédente, les activités en vert sont les activités auxquelles l'utilisateur est déjà inscrit, les autres sont en orange.
-Lorsque l'utilisateur clique sur une activité, la page détaillée de l'activité s'ouvre (voir rubrique n°4).
+La page des activités permet de voir les activités sous forme de liste. Comme pour la page précédente, les activités en vert sont les activités auxquelles l'utilisateur est déjà inscrit, les autres sont en orange.<br>
+Lorsque l'utilisateur clique sur une activité, la page détaillée de l'activité s'ouvre (voir rubrique n°4).<br>
 Depuis cette page, il est également possible de créer une activité grâce au bouton "+" ainsi que de filtrer les activités qui apparaissent avec le bouton "filtre".
 
 ### 3. Création d'une activité
@@ -39,7 +39,7 @@ Tous les utilisateurs peuvent créer une activité. En cliquant sur le bouton pl
 
 ### 4. Page d'activité
 
-La page d'activité est un peu différente pour les visiteurs ou pour les participants à l'activité.
+La page d'activité est un peu différente pour les visiteurs ou pour les participants à l'activité.<br>
 La page de base se constitue des informations générales sur l'activité :
 - Le titre
 - La description
@@ -49,16 +49,15 @@ La page de base se constitue des informations générales sur l'activité :
 - Les participants et le nombre de place restante
 - Le type (tournoi, évènement, entraînement, autre)
 - Les potentielles images déjà mises
-Ainsi que les boutons pour s'inscrire à l'activité.
-
-Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".
+Ainsi que les boutons pour s'inscrire à l'activité.<br>
+Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
 
 ### 5. Page de login
 
-La page de login permet à l'utilisateur de se connecter et à accéder à sa page de profil. De plus, l'utilisateur doit être connecté pour pouvoir rejoindre une activité. 
-L'utilisateur peut également cocher la case "Remember me" pour que l'application garde ses identifiants en mémoire.
-Si l'utilisateur n'a pas de compte, il peut directement accéder à la page SignUp pour s'enregistrer.
+La page de login permet à l'utilisateur de se connecter et à accéder à sa page de profil. De plus, l'utilisateur doit être connecté pour pouvoir rejoindre une activité.<br>
+L'utilisateur peut également cocher la case "Remember me" pour que l'application garde ses identifiants en mémoire.<br>
+Si l'utilisateur n'a pas de compte, il peut directement accéder à la page SignUp pour s'enregistrer.<br>
 
 ### 6. Page SignUp
 
@@ -70,7 +69,7 @@ La page SignUp permet à l'utilisateur de se créer un compte sur l'application.
 
 ### 7. Page de profil
 
-La page de profil est également différente pour les autres utilisateurs et pour soi-même.
+La page de profil est également différente pour les autres utilisateurs et pour soi-même.<br>
 Lorsqu'un utilisateur va sur le profil d'une autre personne il peut voir :
 - Sa photo de profil
 - Son nom
