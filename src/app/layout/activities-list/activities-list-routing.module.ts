@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ActivitiesListPage
+  },  {
+    path: 'activity',
+    loadChildren: () => import('./activity/activity.module').then( m => m.ActivityPageModule)
   }
+
 ];
 
 @NgModule({

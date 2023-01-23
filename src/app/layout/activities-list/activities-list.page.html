@@ -7,5 +7,6 @@
 
 <ion-content>
   <app-card-activity *ngFor="let activity of activities" [activity]="activity"></app-card-activity>
+  <ion-button routerLink="./activity">Go to activity</ion-button>
   <app-button-add-activity></app-button-add-activity>
 </ion-content>
