@@ -15,3 +15,28 @@
   #map {
     height: 100%;
   }
+
+.cardActivity{
+  z-index: 999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+}
+
+.btnActivity{
+  width: 100%;
+  height: 50px;
+  background-color: #FF6720 !important;
+  color: white;
+}
+
+.cardInstruction{
+  z-index: 999;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  color: white;
+}

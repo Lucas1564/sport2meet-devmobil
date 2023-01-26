@@ -3,3 +3,22 @@
       <div id="map"></div>
     </div>
   </div>
+  <ion-card class="cardActivity" *ngIf="!selectedActivity">
+    <ion-card-header>
+      <ion-card-title>Instructions</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Voici les activités près de chez toi. Clique sur un point d’activité pour plus de détails sur celle-ci.</p>
+    </ion-card-content>
+  </ion-card>
+<ion-card class="cardActivity" *ngIf="selectedActivity">
+    <ion-card-header>
+      <ion-card-title>{{selectedActivity.sport}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{selectedActivity.description}}</p>
+      <p><fa-icon [icon]="faLocationDot" style="color:#FF6720"> </fa-icon>  {{selectedActivity.address}},{{selectedActivity.locality}} </p>
+      <p><fa-icon [icon]="faCalendar" style="color:#FF6720"> </fa-icon>  {{selectedActivity.datetime | date:'short'}}</p>
+    </ion-card-content>
+      <button class="btnActivity" (click)="viewActivity(selectedActivity)">View Activity</button>
+  </ion-card>

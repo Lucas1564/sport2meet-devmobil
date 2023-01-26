@@ -3,6 +3,8 @@ import * as Leaflet from 'leaflet';
 import { Geolocation } from '@capacitor/geolocation';
 import { Activity } from 'src/app/models/activity';
 import { ActivityService } from 'src/app/services/activity.service';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-map',
@@ -20,6 +22,9 @@ export class MapComponent implements AfterViewInit {
   map!: Leaflet.Map;
   watchId: any;
   activities?: Activity[];
+  selectedActivity?: Activity;
+  faCalendar = faCalendar;
+  faLocationDot = faLocationDot;
 
   ionViewDidEnter() {
     this.leafletMap();
@@ -85,11 +90,18 @@ export class MapComponent implements AfterViewInit {
           popupAnchor: [0, 0],
         });
         const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker }).on('click', () => {
+          //change size of the current marker
+          marker.setIcon(Leaflet.icon({
+            iconUrl: 'https://png.pngtree.com/png-vector/20220706/ourmid/pngtree-vector-location-icon-free-and-png-png-image_5708678.png',
+            iconSize: [70, 70],
+            iconAnchor: [20, 20],
+            popupAnchor: [0, 0],
+          }));
           this.map.flyTo([activity.location.coordinates[0], activity.location.coordinates[1]], 15);
+          this.selectedActivity = activity;
         });
-        var date = new Date(activity.datetime);
-        marker.bindPopup("<b>" + activity.sport + "</b><br>" + activity.description + "<br>" + activity.address + "<br>" + date.toLocaleString());
         this.map.addLayer(marker);
+
       });
     });
 
@@ -98,6 +110,10 @@ export class MapComponent implements AfterViewInit {
 
   ionViewWillLeave() {
     this.map.remove();
+  }
+
+  viewActivity(activity: Activity) {
+    //this.router.navigate(['/activity', activity.id]);
   }
 
 }
