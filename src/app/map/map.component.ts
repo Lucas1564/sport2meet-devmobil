@@ -84,7 +84,9 @@ export class MapComponent implements AfterViewInit {
           iconAnchor: [20, 20],
           popupAnchor: [0, 0],
         });
-        const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker });
+        const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker }).on('click', () => {
+          this.map.flyTo([activity.location.coordinates[0], activity.location.coordinates[1]], 15);
+        });
         var date = new Date(activity.datetime);
         marker.bindPopup("<b>" + activity.sport + "</b><br>" + activity.description + "<br>" + activity.address + "<br>" + date.toLocaleString());
         this.map.addLayer(marker);
