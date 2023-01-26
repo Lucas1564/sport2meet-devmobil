@@ -27,7 +27,7 @@ export class ActivityPage implements OnInit {
   ionViewDidEnter() {
     this.activity = history.state.activity;
     if (this.activity == undefined) {
-      this.router.navigate(['/activities-list']);
+      this.router.navigate(['/activities-list']); 
     }
   }
 

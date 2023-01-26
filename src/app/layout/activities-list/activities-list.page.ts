@@ -20,6 +20,7 @@ export class ActivitiesListPage implements OnInit {
   }
 
   viewActivity(activity: Activity) {
+    console.log(activity);
     this.router.navigate(['/activities-list/activity'], { state: { activity } });
   }
 

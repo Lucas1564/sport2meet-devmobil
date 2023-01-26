@@ -6,6 +6,7 @@ import { ActivityService } from 'src/app/services/activity.service';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-map',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class MapComponent implements AfterViewInit {
 
-  constructor(private activityService: ActivityService, private router: Router) { }
+  constructor(private activityService: ActivityService, private router: Router,private alertController: AlertController) { }
 
   ngAfterViewInit(): void {
     this.leafletMap();
@@ -40,7 +41,14 @@ export class MapComponent implements AfterViewInit {
       lat = resp.coords.latitude;
       long = resp.coords.longitude;
     }).catch((error) => {
-      console.log('Error getting location', error);
+      const alert = this.alertController.create({
+        header: 'Erreur',
+        message: 'Impossible de récupérer votre position. On vous place au centre de la Suisse.',
+        buttons: ['Compris']
+      });
+      alert.then(alert => alert.present());
+      lat = 46.7985624;
+      long = 8.2319736;
     });
 
     //instantiate leaflet map
