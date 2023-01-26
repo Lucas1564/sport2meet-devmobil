@@ -11,6 +11,7 @@ import { ActivitiesListPage } from './activities-list.page';
 import { MainButtonModule } from 'src/app/main-button/main-button.module';
 import { CardActivityModule } from 'src/app/card-activity/card-activity.module';
 import { ButtonAddActivityModule } from 'src/app/button-add-activity/button-add-activity.module';
+import { FormAddActivityModule } from 'src/app/form-add-activity/form-add-activity.module';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { ButtonAddActivityModule } from 'src/app/button-add-activity/button-add-
     ActivitiesListPageRoutingModule,
     CardActivityModule,
     FontAwesomeModule,
-    ButtonAddActivityModule
+    ButtonAddActivityModule,
+    FormAddActivityModule
   ],
   declarations: [ActivitiesListPage]
 })

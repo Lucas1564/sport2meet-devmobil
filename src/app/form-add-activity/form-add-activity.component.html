@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nouvelle activité</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form>
+    <ion-item>
+        <ion-label position="floating">Titre de l'activité</ion-label>
+        <ion-input ngModel="activityTitle"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Date et heure</ion-label>
+        <ion-datetime formControlName="activityDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Description de l'activité</ion-label>
+        <ion-textarea formControlName="activityDescription"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Choix du sport</ion-label>
+        <ion-select formControlName="activitySport">
+            <ion-select-option *ngFor="let sport of sports" [value]="sport">{{sport}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Type d'activité</ion-label>
+        <ion-select formControlName="activityType">
+            <ion-select-option *ngFor="let type of types" [value]="type">{{type}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Nombre de participants</ion-label>
+        <ion-input formControlName="activityParticipants" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Adresse</ion-label>
+        <ion-input formControlName="activityAddress"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">NPA</ion-label>
+        <ion-input formControlName="activityNPA"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Ville</ion-label>
+        <ion-input formControlName="activityCity"></ion-input>
+    </ion-item>
+    <ion-button (click)="onCreate()" expand="block">Créer</ion-button>
+  </form> 
+</ion-content>
+
