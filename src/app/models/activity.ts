@@ -6,8 +6,10 @@ export type Activity = {
     description: string;
     locality: string;
     address: string;
+    npa : number;
     datetime: string;
-    participants: string[];
+    players: number;
+    type: string;
     location: {
         type: string;
         coordinates: number[];

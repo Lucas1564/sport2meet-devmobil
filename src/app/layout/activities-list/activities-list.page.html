@@ -6,7 +6,6 @@
 </ion-header>
 
 <ion-content>
-  <app-card-activity *ngFor="let activity of activities" [activity]="activity"></app-card-activity>
-  <ion-button routerLink="./activity">Go to activity</ion-button>
+  <app-card-activity (click)="viewActivity(activity)" *ngFor="let activity of activities" [activity]="activity"></app-card-activity>
   <app-button-add-activity [routerLink]="['/form-add-activity']" routerLinkActive="active"></app-button-add-activity>
 </ion-content>

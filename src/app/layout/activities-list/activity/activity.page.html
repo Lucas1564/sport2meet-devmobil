@@ -14,14 +14,17 @@
     </ion-segment-button>
   </ion-segment>
   
-  <ion-card>
-      <ion-card-title>Titre activité</ion-card-title>
-      <ion-card-content></ion-card-content>
-      <ion-card-title>Participant</ion-card-title>
-      <ion-card-content></ion-card-content>
-      <ion-card-title>Type</ion-card-title>
-      <ion-card-content></ion-card-content>
-      <ion-card-title>Image</ion-card-title>
-      <ion-card-content></ion-card-content>
+  <ion-card class="cardActivity" *ngIf="activity">
+    <ion-card-header>
+      <ion-card-title>{{activity.sport}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{activity.description}}</p>
+      <p><fa-icon [icon]="faLocationDot" style="color:#FF6720"> </fa-icon>  {{activity.address}}, {{activity.npa}} {{activity.locality}} </p>
+      <p><fa-icon [icon]="faCalendar" style="color:#FF6720"> </fa-icon>  {{activity.datetime | date:'short'}}</p>
+      <p><fa-icon [icon]="faUser" style="color:#FF6720"> </fa-icon>  {{activity.players}}</p>
+      <p>{{activity.type}}</p>
+    </ion-card-content>
   </ion-card>
 </ion-content>
+

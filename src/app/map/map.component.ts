@@ -5,6 +5,7 @@ import { Activity } from 'src/app/models/activity';
 import { ActivityService } from 'src/app/services/activity.service';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -13,7 +14,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 })
 export class MapComponent implements AfterViewInit {
 
-  constructor(private activityService: ActivityService) { }
+  constructor(private activityService: ActivityService, private router: Router) { }
 
   ngAfterViewInit(): void {
     this.leafletMap();
@@ -89,14 +90,7 @@ export class MapComponent implements AfterViewInit {
           iconAnchor: [20, 20],
           popupAnchor: [0, 0],
         });
-        const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker }).on('click', () => {
-          //change size of the current marker
-          marker.setIcon(Leaflet.icon({
-            iconUrl: 'https://png.pngtree.com/png-vector/20220706/ourmid/pngtree-vector-location-icon-free-and-png-png-image_5708678.png',
-            iconSize: [70, 70],
-            iconAnchor: [20, 20],
-            popupAnchor: [0, 0],
-          }));
+        const marker = Leaflet.marker([activity.location.coordinates[0], activity.location.coordinates[1]], { icon: activityMarker }).on('click', () => {           
           this.map.flyTo([activity.location.coordinates[0], activity.location.coordinates[1]], 15);
           this.selectedActivity = activity;
         });
@@ -113,7 +107,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   viewActivity(activity: Activity) {
-    //this.router.navigate(['/activity', activity.id]);
+    this.router.navigate(['/activities-list/activity'], { state: { activity } });
   }
 
 }
