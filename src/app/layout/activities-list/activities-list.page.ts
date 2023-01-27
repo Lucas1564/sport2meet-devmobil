@@ -24,4 +24,8 @@ export class ActivitiesListPage implements OnInit {
     this.router.navigate(['/activities-list/activity'], { state: { activity } });
   }
 
+  onChange(){
+    this.activityService.getAll().subscribe(activities => this.activities = activities);
+  }
+
 }

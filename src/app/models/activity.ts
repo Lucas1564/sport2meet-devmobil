@@ -1,7 +1,7 @@
 import { type } from "os";
 
 export type Activity = {
-    id: string;
+    _id: string;
     sport: string;
     description: string;
     locality: string;
@@ -10,6 +10,7 @@ export type Activity = {
     datetime: string;
     players: number;
     type: string;
+    creator: string;
     location: {
         type: string;
         coordinates: number[];

@@ -13,9 +13,10 @@ import { Router } from '@angular/router';
 })
 export class ActivityPage implements OnInit {
 
-  constructor(private router: Router ) { }
 
-  ngOnInit() {
+  constructor(private router: Router) { }
+
+  async ngOnInit() {
   }
 
   faCalendar = faCalendar;
@@ -30,6 +31,7 @@ export class ActivityPage implements OnInit {
       this.router.navigate(['/activities-list']); 
     }
   }
+
 
 
 }
