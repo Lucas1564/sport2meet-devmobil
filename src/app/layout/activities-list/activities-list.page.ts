@@ -19,11 +19,6 @@ export class ActivitiesListPage implements OnInit {
     this.activityService.getAll().subscribe(activities => this.activities = activities);
   }
 
-  viewActivity(activity: Activity) {
-    console.log(activity);
-    this.router.navigate(['/activities-list/activity'], { state: { activity } });
-  }
-
   onChange(){
     this.activityService.getAll().subscribe(activities => this.activities = activities);
   }

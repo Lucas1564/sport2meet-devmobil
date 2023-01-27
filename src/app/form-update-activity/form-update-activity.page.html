@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/activities-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modifier activité</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="updateActivityForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+            <ion-label position="floating">Sport</ion-label>
+            <ion-select formControlName="sport">
+                <ion-select-option *ngFor="let sport of sports" [value]="sport">{{sport}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-input formControlName="description" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Adresse</ion-label>
+            <ion-input formControlName="address" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">NPA</ion-label>
+            <ion-input formControlName="npa" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Localité</ion-label>
+            <ion-input formControlName="locality" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Date et heure</ion-label>
+            <ion-datetime formControlName="datetime" min="{{dateCtrl}}" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Type</ion-label>
+            <ion-select formControlName="type">
+                <ion-select-option *ngFor="let type of types" [value]="type">{{type}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Nombre de joueurs</ion-label>
+            <ion-input formControlName="players" type="number"></ion-input>
+        </ion-item>
+        <ion-button type="submit" class="submitBtn" [disabled]="!updateActivityForm.valid">Modifier</ion-button>
+    </form>
+</ion-content>
+
