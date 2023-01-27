@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>User Profile</ion-title>
-
+    <ion-title>Profil utilisateur</ion-title>
     <!-- Logout button -->
     <ion-buttons slot="end">
       <app-main-button (click)="logOut()">
@@ -20,36 +19,11 @@
       User name
     </ion-label>
   </ion-item>
-  <table>
-    <tr>
-      <th>
-        4
-      </th>
-      <th>
-        4587
-      </th>
-      <th>
-        74
-      </th>
-    </tr>
-    <tr>
-      <td>Participant</td>
-      <td>Activités</td>
-      <td>Followers</td>
-    </tr>
-  </table>
-  <ion-card>
-    <ion-item href="#">
-      <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
-      <ion-label>Statistics</ion-label>
-    </ion-item>
-    <ion-item href="#">
-      <ion-icon name="settings-outline" slot="start"></ion-icon>
-      <ion-label>Settings</ion-label>
-    </ion-item>
-    <ion-item href="#">
-      <ion-icon name="information-circle" slot="start"></ion-icon>
-      <ion-label>Support</ion-label>
-    </ion-item>
-  </ion-card>
+  <ion-grid>
+  <ion-row>
+    <ion-col><strong>1</strong><br>Activités créées</ion-col>
+    <ion-col><strong>1</strong><br>Participations à des activités</ion-col>
+    <ion-col *ngIf="user"><strong>{{user.registrationDate}}</strong><br>Membre depuis</ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

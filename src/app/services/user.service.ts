@@ -10,7 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { 
   }
-  getUserByID(): Observable<User[]>{
-    return this.http.get<User[]>('https://sport-2-meet.onrender.com/user/id/XXX');
+  getUserByID(idUser: User | undefined): Observable<User[]>{
+    console.log('https://sport-2-meet.onrender.com/users/id/'+ idUser)
+    return this.http.get<User[]>('https://sport-2-meet.onrender.com/users/id/'+ idUser);
   }
 }
