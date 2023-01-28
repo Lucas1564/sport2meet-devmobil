@@ -5,7 +5,11 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { Activity } from 'src/app/models/activity';
 import { Router } from '@angular/router';
-
+import { ActivityService } from 'src/app/services/activity.service';
+import { Storage } from "@ionic/storage";
+import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
+import { activityUser } from 'src/app/models/activityUser';
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.page.html',
@@ -13,8 +17,10 @@ import { Router } from '@angular/router';
 })
 export class ActivityPage implements OnInit {
 
+  token!: string;
 
-  constructor(private router: Router) { }
+
+  constructor(private alertController: AlertController,private router: Router,private activityService: ActivityService,private storage: Storage, private http: HttpClient) { }
 
   async ngOnInit() {
   }
@@ -24,12 +30,117 @@ export class ActivityPage implements OnInit {
   faUser = faUser;
   faClock = faClock;
   activity?: Activity;
+  aRejoindre = true;
+  enCours = false;
 
-  ionViewDidEnter() {
+  async ionViewDidEnter() {
     this.activity = history.state.activity;
     if (this.activity == undefined) {
       this.router.navigate(['/activities-list']); 
     }
+    this.token = await this.storage.get('token');
+    if (this.token != undefined) {
+      this.activityService.getActivityByUser(this.token).subscribe((data: any) => {
+        //for each activity in the list, check if the activity id is the same as the activity id in the url
+        data.forEach((activity: activityUser) => {
+          console.log(activity);
+          if (activity.activity._id == this.activity?._id || this.enCours) {
+            this.aRejoindre = false;
+            this.enCours = true;
+          }else{
+            this.aRejoindre = true;
+            this.enCours = false;
+          }
+        });
+      });
+    }
+  }
+
+  joinActivity() {
+
+    //https://sport-2-meet.onrender.com/userActivity/join/idActivity with token in header
+    const header  = { 'Authorization': 'Bearer ' + this.token };
+    this.http.post('https://sport-2-meet.onrender.com/userActivity/join/' + this.activity?._id, {}, { headers: header }).subscribe(
+        (response) => {
+          const alert = this.alertController.create({
+            header: 'Succès',
+            message: 'Vous avez bien rejoint l\'activité',
+            buttons: ['OK']
+          });
+          alert.then(alert => alert.present());
+          //reset form
+          console.log(response);
+          this.aRejoindre = false;
+        },
+        (error) => {
+          if(error.status == 200){
+            const alert = this.alertController.create({
+              header: 'Succès',
+              message: 'Vous avez bien rejoint l\'activité',
+              buttons: ['OK']
+            });
+            alert.then(alert => alert.present());
+            this.aRejoindre = false;
+            //reset form
+          }else{
+            const alert = this.alertController.create({
+              header: error.status,
+              message: error.error,
+              buttons: ['OK']
+            });
+            alert.then(alert => alert.present());
+            console.log(error);
+            if (error.status == 401) {
+              this.router.navigate(['login']);
+            }
+          }
+        });     
+  }
+
+  onFileSelected(event: any) {
+  }
+
+  uploadFile() {
+  }
+
+  leaveActivity() {
+    //https://sport-2-meet.onrender.com/userActivity/leave/idActivity with token in header
+    const header  = { 'Authorization': 'Bearer ' + this.token };
+    this.http.delete('https://sport-2-meet.onrender.com/userActivity/leave/' + this.activity?._id, { headers: header }).subscribe(
+        (response) => {
+          const alert = this.alertController.create({
+            header: 'Succès',
+            message: 'Vous avez bien quitté l\'activité',
+            buttons: ['OK']
+          });
+          alert.then(alert => alert.present());
+          //reset form
+          console.log(response);
+          this.aRejoindre = true;
+        },
+        (error) => {
+          if(error.status == 200){
+            const alert = this.alertController.create({
+              header: 'Succès',
+              message: 'Vous avez bien quitté l\'activité',
+              buttons: ['OK']
+            });
+            alert.then(alert => alert.present());
+            this.aRejoindre = true;
+            //reset form
+          }else{
+            const alert = this.alertController.create({
+              header: error.status,
+              message: error.statusText,
+              buttons: ['OK']
+            });
+            alert.then(alert => alert.present());
+            console.log(error);
+            if (error.status == 401) {
+              this.router.navigate(['login']);
+            }
+          }
+        });     
   }
 
 

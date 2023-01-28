@@ -12,7 +12,7 @@
     <ion-segment-button value="default">
       <ion-label>Activité</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="chat">
+    <ion-segment-button *ngIf="!aRejoindre" value="chat">
       <ion-label>Chat</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -28,6 +28,15 @@
       <p><fa-icon [icon]="faUser" style="color:#FF6720"> </fa-icon>  {{activity.players}}</p>
       <p>{{activity.type}}</p>
     </ion-card-content>
+    <ion-card-content *ngIf="!aRejoindre">
+      <ion-item>
+        <ion-label position="stacked">Ajouter une photo</ion-label>
+        <ion-input type="file" accept="image/*" (change)="onFileSelected($event)"></ion-input>
+      </ion-item>
+      <ion-button (click)="uploadFile()">Ajouter</ion-button>
+    </ion-card-content>
   </ion-card>
+  <ion-button *ngIf="aRejoindre" expand="block" (click)="joinActivity()">Rejoindre</ion-button>
+  <ion-button *ngIf="!aRejoindre" expand="block" (click)="leaveActivity()">Quitter l'activité</ion-button>
 </ion-content>
 
