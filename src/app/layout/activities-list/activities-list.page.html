@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Liste des activités</ion-title>
-    <fa-icon [icon]="faFilter"> </fa-icon>
+      <ion-button [routerLink]="['/filter-activity']" routerLinkActive="active">
+        <fa-icon [icon]="faFilter"> </fa-icon>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 

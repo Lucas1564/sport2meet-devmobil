@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'form-update-activity',
     loadChildren: () => import('./form-update-activity/form-update-activity.module').then( m => m.FormUpdateActivityPageModule)
   },
+  {
+    path: 'filter-activity',
+    loadChildren: () => import('./filter-activity/filter-activity.module').then( m => m.FilterActivityPageModule)
+  },
 
 
 

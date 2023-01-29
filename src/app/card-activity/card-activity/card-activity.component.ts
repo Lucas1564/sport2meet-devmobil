@@ -59,7 +59,10 @@ export class CardActivityComponent implements OnInit {
                 buttons: ['OK']
               });
               alert.then(alert => alert.present());
-              this.router.navigateByUrl('/activities-list');
+              this.router.navigateByUrl('/activities-list')
+              .then(() => {
+                window.location.reload();
+              });
             }, (err) => {
               const alert = this.alertController.create({
                 header: err.status,
@@ -69,7 +72,10 @@ export class CardActivityComponent implements OnInit {
               alert.then(alert => alert.present());
               console.log(err);
             });
-            this.router.navigateByUrl('/activities-list');
+            this.router.navigateByUrl('/activities-list')
+            .then(() => {
+              window.location.reload();
+            });
           }
         }
       ]

@@ -60,7 +60,10 @@ export class FormAddActivityComponent implements OnInit {
         //reset form
         this.addActivityForm.reset();
         console.log(response);
-        this.router.navigate(['/activities-list/activity'], { state: { response } });
+        this.router.navigate(['/activities-list/activity'], { state: { response } })
+        .then(() => {
+          window.location.reload();
+        });
       },
       (error) => {
         console.log(error);
@@ -71,7 +74,7 @@ export class FormAddActivityComponent implements OnInit {
         });
         alert.then(alert => alert.present());
         if (error.status == 401) {
-          this.router.navigate(['login'], { queryParams: { returnUrl: '/form-add-activity' } });
+          this.router.navigate(['login'], { queryParams: { returnUrl: '/form-add-activity' } })
         }
       });
   }

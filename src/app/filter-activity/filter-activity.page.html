@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/activities-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Filtrer les activités</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="filterActivityForm" (ngSubmit)="filter()">
+    <ion-item>
+        <ion-label position="floating">Sport</ion-label>
+        <ion-select formControlName="sport">
+            <ion-select-option *ngFor="let sport of sports" [value]="sport">{{sport}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Type</ion-label>
+        <ion-select formControlName="type">
+            <ion-select-option *ngFor="let type of types" [value]="type">{{type}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-button type="submit" class="submitBtn" [disabled]="!filterActivityForm.valid">Filtrer</ion-button>
+    <ion-button type="reset" class="resetBtn" (click)="reset()">Réinitialiser</ion-button>
+</form>
+
+</ion-content>
