@@ -20,7 +20,7 @@ La page d'accueil permet de voir les activités sur une carte grâce à leur gé
 L'utilisateur peut filtrer les activités qu'il veut voir via la page activité par sport et type en appuyant sur le bouton "filtre".<br>
 ![image filtre](/resources/filtre.png)
 Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
-![image accueil](/resources/activite_accueil.png)
+![image accueil](/resources/activite_accueil.png)<br>
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
 
 
