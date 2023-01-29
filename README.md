@@ -61,7 +61,7 @@ Ainsi que les boutons pour s'inscrire à l'activité.<br>
 <img src="/resources/activite_non_membre.png" style="height:600px"/><BR>
 Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
-<br><img src="/resources/activite_membre.png" style="height:600px"/><br>
+<br><img src="/resources/activite_membre_VF.png" style="height:600px"/><br>
 
 ### 5. Page de login
 
