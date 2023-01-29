@@ -23,7 +23,6 @@ Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'aff
 ![image accueil](/resources/activite_accueil.png)<br>
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
 
-
 ### 2. Page des activités
 
 La page des activités permet de voir les activités sous forme de liste. Comme pour la page précédente, les activités en vert sont les activités auxquelles l'utilisateur est déjà inscrit, les autres sont en orange.<br>
@@ -34,6 +33,7 @@ Depuis cette page, il est également possible de créer une activité grâce au 
 ### 3. Création d'une activité
 
 Tous les utilisateurs peuvent créer une activité. En cliquant sur le bouton plus de la page d'accueil ou des activités, l'utilisateur arrivera sur un formulaire où il doit renseigner :
+
 - Le titre
 - La date et l'heure
 - La description
@@ -41,12 +41,13 @@ Tous les utilisateurs peuvent créer une activité. En cliquant sur le bouton pl
 - Le type d'activité (tournoi, évènement, entraînement, autre)
 - Le nombre de participant maximum
 - L'adresse complète (rue, npa, ville)
-![image formulaire](/resources/formulaire.png)
+  ![image formulaire](/resources/formulaire.png)
 
 ### 4. Page d'activité
 
 La page d'activité est un peu différente pour les visiteurs ou pour les participants à l'activité.<br>
 La page de base se constitue des informations générales sur l'activité :
+
 - Le titre
 - La description
 - Le sport
@@ -57,11 +58,11 @@ La page de base se constitue des informations générales sur l'activité :
 - Les potentielles images déjà mises
 
 Ainsi que les boutons pour s'inscrire à l'activité.<br>
-ICI IMAGE DE LA PAGE D'ACTIVITE NON-PARTICIPANT<BR>
+![image activité non-participant](/resources/activite_non_membre.png)<BR>
 Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
 
-ICI IMAGE DE LA PAGE ACTIVITE PARTICIPANT
+![image activité participant](/resources/activite_membre.png)
 
 ### 5. Page de login
 
@@ -73,8 +74,9 @@ Si l'utilisateur n'a pas de compte, il peut directement accéder à la page Sign
 ### 6. Page SignUp
 
 La page SignUp permet à l'utilisateur de se créer un compte sur l'application. Il doit renseigner :
+
 - Son email
 - Son prénom
 - Son nom
 - Son mot de passe
-![image signup](/resources/signup.png)
+  ![image signup](/resources/signup.png)
