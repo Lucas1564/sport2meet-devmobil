@@ -38,11 +38,7 @@
       <p class="custom-title">Images</p>
     </ion-card-content>
     <ion-card-content *ngIf="!aRejoindre">
-      <ion-item>
-        <ion-label position="stacked">Ajouter une photo</ion-label>
-        <ion-input type="file" accept="image/*" (change)="onFileSelected($event)"></ion-input>
-      </ion-item>
-      <ion-button color="favorite" (click)="uploadFile()">Ajouter</ion-button>
+      <ion-button color="favorite" (click)="chooseTypePicture()">Ajouter Photo</ion-button>
     </ion-card-content>
   </ion-card>
   <ion-button color="favorite" *ngIf="aRejoindre" expand="block" (click)="joinActivity()">Rejoindre</ion-button>
