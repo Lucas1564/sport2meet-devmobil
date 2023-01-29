@@ -16,16 +16,20 @@ Dans les rubriques suivantes, nous allons détailler les fonctionnalités de bas
 ### 1. Page d'accueil
 
 La page d'accueil permet de voir les activités sur une carte grâce à leur géolocalisation. La carte se charge directement grâce à la position de l'utilisateur, ce qui permet de voir toute suite les activités qui se trouvent à proximité. Les activités auxquelles l'utilisateur est déjà inscrit s'affiche d'une couleur verte alors que les autres sont en orange. <br>
+![image accueil](/resources/accueil.png)
 L'utilisateur peut filtrer les activités qu'il veut voir sur la carte,  par ville, sport, XXXX en appuyant sur le bouton "filtre".<br>
+ICI METTRE PHOTO DES FILTRES + DIRE DANS LE TEXTE COMMENT ON PEUT FILTRER<BR>
 Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
+![image accueil](/resources/activite_accueil.png)
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
-![image provisoire](/resources/photoprovisoire.png)
+
 
 ### 2. Page des activités
 
 La page des activités permet de voir les activités sous forme de liste. Comme pour la page précédente, les activités en vert sont les activités auxquelles l'utilisateur est déjà inscrit, les autres sont en orange.<br>
 Lorsque l'utilisateur clique sur une activité, la page détaillée de l'activité s'ouvre (voir rubrique n°4).<br>
 Depuis cette page, il est également possible de créer une activité grâce au bouton "+" ainsi que de filtrer les activités qui apparaissent avec le bouton "filtre".
+![image activités](/resources/activites.png)
 
 ### 3. Création d'une activité
 
@@ -37,6 +41,7 @@ Tous les utilisateurs peuvent créer une activité. En cliquant sur le bouton pl
 - Le type d'activité (tournoi, évènement, entraînement, autre)
 - Le nombre de participant maximum
 - L'adresse complète (rue, npa, ville)
+![image formulaire](/resources/formulaire.png)
 
 ### 4. Page d'activité
 
@@ -52,14 +57,18 @@ La page de base se constitue des informations générales sur l'activité :
 - Les potentielles images déjà mises
 
 Ainsi que les boutons pour s'inscrire à l'activité.<br>
+ICI IMAGE DE LA PAGE D'ACTIVITE NON-PARTICIPANT<BR>
 Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
+
+ICI IMAGE DE LA PAGE ACTIVITE PARTICIPANT
 
 ### 5. Page de login
 
 La page de login permet à l'utilisateur de se connecter et à accéder à sa page de profil. De plus, l'utilisateur doit être connecté pour pouvoir rejoindre une activité.<br>
 L'utilisateur peut également cocher la case "Remember me" pour que l'application garde ses identifiants en mémoire.<br>
 Si l'utilisateur n'a pas de compte, il peut directement accéder à la page SignUp pour s'enregistrer.<br>
+![image login](/resources/login.png)
 
 ### 6. Page SignUp
 
@@ -68,19 +77,4 @@ La page SignUp permet à l'utilisateur de se créer un compte sur l'application.
 - Son prénom
 - Son nom
 - Son mot de passe
-
-### 7. Page de profil
-
-La page de profil est également différente pour les autres utilisateurs et pour soi-même.<br>
-Lorsqu'un utilisateur va sur le profil d'une autre personne il peut voir :
-- Sa photo de profil
-- Son nom
-- Les activités qu'il a créées
-- Ses statistiques
-
-Lorsqu'un utilisateur va sur son profil il peut voir :
-- Sa photo de profil
-- Son nom
-- Ses statistiques
-- Les paramètres du profil
-- Le contact au support
+![image signup](/resources/signup.png)
