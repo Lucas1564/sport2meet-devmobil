@@ -18,6 +18,7 @@ Dans les rubriques suivantes, nous allons détailler les fonctionnalités de bas
 La page d'accueil permet de voir les activités sur une carte grâce à leur géolocalisation. La carte se charge directement grâce à la position de l'utilisateur, ce qui permet de voir toute suite les activités qui se trouvent à proximité. Les activités auxquelles l'utilisateur est déjà inscrit s'affiche d'une couleur verte alors que les autres sont en orange. <br>
 ![image accueil](/resources/accueil.png)
 L'utilisateur peut filtrer les activités qu'il veut voir sur la carte,  par ville, sport, XXXX en appuyant sur le bouton "filtre".<br>
+ICI METTRE PHOTO DES FILTRES + DIRE DANS LE TEXTE COMMENT ON PEUT FILTRER<BR>
 Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
 ![image accueil](/resources/activite_accueil.png)
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
@@ -56,8 +57,11 @@ La page de base se constitue des informations générales sur l'activité :
 - Les potentielles images déjà mises
 
 Ainsi que les boutons pour s'inscrire à l'activité.<br>
+ICI IMAGE DE LA PAGE D'ACTIVITE NON-PARTICIPANT<BR>
 Lorsque l'utilisateur est inscrit à l'activité, il a une rubrique "chat" en plus afin de discuter avec les autres participants. Le bouton "rejoindre l'activité" s'est également modifié en "quitter l'activité".<br>
 Le participant peut également ajouter des photos dans l'album de l'activité.
+
+ICI IMAGE DE LA PAGE ACTIVITE PARTICIPANT
 
 ### 5. Page de login
 
