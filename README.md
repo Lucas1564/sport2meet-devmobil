@@ -18,7 +18,7 @@ Dans les rubriques suivantes, nous allons détailler les fonctionnalités de bas
 La page d'accueil permet de voir les activités sur une carte grâce à leur géolocalisation. La carte se charge directement grâce à la position de l'utilisateur, ce qui permet de voir toute suite les activités qui se trouvent à proximité. Les activités auxquelles l'utilisateur est déjà inscrit s'affiche d'une couleur verte alors que les autres sont en orange. <br>
 ![image accueil](/resources/accueil.png)
 L'utilisateur peut filtrer les activités qu'il veut voir via la page activité par sport et type en appuyant sur le bouton "filtre".<br>
-![image filtre](/resources/filtre.png)
+![image filtre](/resources/filtre.png)<br>
 Lorsque l'utilisateur clique sur une activité, la rubrique correspondante s'affiche pour montrer les différentes caractéristiques de l'activité (titre, description, lieu, date).<br>
 ![image accueil](/resources/activite_accueil.png)<br>
 Depuis cette page, il est également possible d'ajouter une activité grâce au bouton "+".
